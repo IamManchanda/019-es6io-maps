@@ -2,13 +2,14 @@
  * JS
  */
 
-const clickCounts = new Map();
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-  clickCounts.set(button, 0);
-  button.addEventListener('click', function () {
-    const value = clickCounts.get(this);
-    clickCounts.set(this, value + 1);
-    console.log(clickCounts);
-  });
-});
+let dog1 = { name: 'Snickers' };
+let dog2 = { name: 'Sunny' };
+
+const strong = new Map();
+const weak = new WeakMap();
+
+strong.set(dog1, 'Snickers is the best');
+weak.set(dog2, 'Sunny is the 2nd best');
+
+dog1 = null;
+dog2 = null;
