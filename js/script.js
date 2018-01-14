@@ -2,16 +2,13 @@
  * JS
  */
 
-const dogs = new Map();
-
-dogs.set('Snickers', 3);
-dogs.set('Sunny', 2);
-dogs.set('Hugo', 10);
-
-dogs.forEach((value, key) => {
-  console.log(value, key);
+const clickCounts = new Map();
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  clickCounts.set(button, 0);
+  button.addEventListener('click', function () {
+    const value = clickCounts.get(this);
+    clickCounts.set(this, value + 1);
+    console.log(clickCounts);
+  });
 });
-
-for (const [key, value] of dogs) {
-  console.log(key, value);
-}
